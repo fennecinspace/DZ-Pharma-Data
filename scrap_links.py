@@ -25,7 +25,7 @@ for c, link in enumerate(links):
             meds_lst_page = req.get('{}&p={}'.format(link, i))
             if meds_lst_page.status_code == 200:
                 meds_list_soup = BeautifulSoup(meds_lst_page.content, 'lxml')
-                meds_in_page = meds_list_soup.select('a[href^="medic"]')
+                meds_in_page = meds_list_soup.select('[scope="row"] > td:nth-of-type(1) > a:nth-of-type(1)')
                 for med in meds_in_page:
                     if chars[c] in medications_links:
                         medications_links[chars[c]] += ['{}{}'.format(SITE_URL, med['href'])]

@@ -28,9 +28,9 @@ for c, link in enumerate(links):
                 meds_in_page = meds_list_soup.select('[scope="row"] > td:nth-of-type(1) > a:nth-of-type(1)')
                 for med in meds_in_page:
                     if chars[c] in medications_links:
-                        medications_links[chars[c]] += ['{}{}'.format(SITE_URL, med['href'])]
+                        medications_links[chars[c]] += [{'link':'{}{}'.format(SITE_URL, med['href'])}]
                     else:
-                        medications_links[chars[c]] = ['{}{}'.format(SITE_URL, med['href'])]
+                        medications_links[chars[c]] = [{'link':'{}{}'.format(SITE_URL, med['href'])}]
     
     print('Letter {} | Saving      '.format(chars[c]), end = "\r")
     with open(LINKS_FILE, 'w') as f:

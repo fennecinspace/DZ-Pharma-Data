@@ -12,7 +12,7 @@ with open(MEDS_FILE, 'r') as f:
 for char, char_links in medications.items():
     for i, med in enumerate(char_links):
         print('\rLetter {} | Medications [{:4}/{:4}]'.format(char, i+1, len(char_links)), end = '')
-        if 'Nom' in med:
+        if 'name' in med:
             continue
         try:
             page_to_bs4 = req.get(med['link'])
@@ -25,31 +25,36 @@ for char, char_links in medications.items():
                 tmp = med_page.find(attrs={'style' : 'text-shadow: 3px 3px rgb(216, 228, 237); padding-left: 10px; padding-right: 10px; margin-top:0px;'})
 
                 if tmp:
-                    med = {'Nom': tmp.text, 'link': med['link']}
+                    med = {'name': tmp.text, 'link': med['link']}
 
                     ## getting Image
                     tmp = med_page.find(attrs={'style' : 'max-width:200px; max-height:200px; display:block; margin:0 auto; margin-bottom:20px;'})
                     if tmp:
-                        med['Img'] = SITE_URL + tmp['src']
+                        med['img'] = SITE_URL + tmp['src']
 
                     ## getting headline name
                     tmp = med_page.find(attrs={'href' : re.compile("notice*")})
                     if tmp:
-                        med['Notice'] = SITE_URL + tmp['href']
+                        med['notice'] = SITE_URL + tmp['href']
 
                     ## getting  Main Data
                     tmp = left_info.find_all('a')
                     if len(tmp) > 0:
-                        med['Laboratoire'] = tmp[0].text
+                        med['lab'] = {
+                            'name': tmp[0].text,
+                            'link': SITE_URL + tmp[0]['href'],
+                        }
 
                     if len(tmp) > 1:
-                        med['C.Pharmacologique'] = tmp[1].text
+                        med['class'] = {
+                            'pharmacological': tmp[1].text
+                        }
 
-                    if len(tmp) > 2:
-                        med['C.Therapeutique'] = tmp[2].text
-                        
+                        if len(tmp) > 2:
+                            med['class']['therapeutic'] = tmp[2].text
+                            
                     if len(tmp) > 3:
-                        med['Info'] = tmp[3].text
+                        med['generic'] = tmp[3].text
 
                     ## getting all page additional data
                     all_lines = right_info.text.splitlines() + left_info.text.splitlines()

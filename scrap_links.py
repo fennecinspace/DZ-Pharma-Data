@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os, json
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-LINKS_FILE = os.path.join(BASE_DIR, 'links.json')
+LINKS_FILE = os.path.join(BASE_DIR, 'data', 'links.json')
 
 SITE_URL  = "https://pharmnet-dz.com/"
 chars = [ chr(i) for i in range(65,91) ]

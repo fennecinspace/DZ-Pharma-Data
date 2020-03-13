@@ -6,9 +6,9 @@ This is an attempt to collect all medications in algeria.<br>
 
 ```text
 {
-  "A": [medications that begin with the letter A],
-  ....
-  "Z": [medications that begin with the letter Z]
+	"A": [medications that begin with the letter A],
+	....
+	"Z": [medications that begin with the letter Z]
 }
 ```
 
@@ -16,31 +16,35 @@ This is an attempt to collect all medications in algeria.<br>
 
 ```JSON
 {
-  "name": "ABASAGLAR 100UI/ML (3,64MG/ML) SOL. INJ. EN STYLO PREREMPLI KWIKPEN  B/05 STYLOS PREREMLIS DE 3 ML",
-  "link": "https://pharmnet-dz.com/m-5866-abasaglar-100ui-ml-3-64mg-ml-sol-inj-en-stylo-prerempli-kwikpen-b-05-stylos-preremlis-de-3-ml",
-  "img": "https://pharmnet-dz.com/ImageHandler.ashx?imageurl=/img/medics/5866.png",
-  "notice": "https://pharmnet-dz.com/notice.ashx?id=5866",
-  "lab": {
-      "name": "ELI LILLY",
-      "link": "https://pharmnet-dz.com/l-84-eli-lilly"
-  },
-  "class": {
-      "pharmacological": "INSULINES",
-      "therapeutic": "METABOLISME NUTRITION DIABETE"
-  },
-  "generic": "INSULINE GLARGINE",
-  "Liste": "Liste II",
-  "Pays": "AUTRICHE",
-  "Tarif de reference": "6708.11 DA",
-  "PPA": "6708.11 DA",
-  "Num Enregistrement": "034/14B215/17",
-  "Nom Commercial": "ABASAGLAR",
-  "Code DCI": "14B215",
-  "Forme": "SOL. INJ",
-  "Dosage": "100UI/ML (3,64MG/ML)",
-  "Conditionnement": "B/05 STYLOS PREREMLIS DE 3 ML",
-  "Commercialisation": true,
-  "Remboursable": true
+	"name": "BACTIZOL 1G/FL PDRE. ET SOLV.SOL.INJ. IM B/1FL. PDRE. + 1AMP.SOLV. (0,5% LIDOCAINE) DE 4ML",
+	"link": "https://pharmnet-dz.com/m-1905-bactizol-1g-fl-pdre-et-solv-sol-inj-im-b-1fl-pdre--1amp-solv--0-5-lidocaine-de-4ml",
+	"img": "https://pharmnet-dz.com/ImageHandler.ashx?imageurl=/img/medic.png",
+	"notice": "https://pharmnet-dz.com//notice.ashx?id=896",
+	"lab": {
+		"name": "SAIDAL GROUPE",
+		"link": "https://pharmnet-dz.com/l-252-saidal-groupe",
+		"img": "https://pharmnet-dz.com/ImageHandler.ashx?imageurl=img/labos/252.png",
+		"address": "Route de wilaya n\u00c2\u00b011 BP 141 Dar El Beida - Alger",
+		"tel": "+213 23 75 10 28 - +213 23 92 01 76",
+		"web": "www.saidalgroup.dz"
+	},
+	"class": {
+		"pharmacological": "CEPHALOSPORINES",
+		"therapeutic": "INFECTIOLOGIE"
+	},
+	"generic": "CEFAZOLINE",
+	"commercialisation": true,
+	"refundable": null,
+	"list": "Liste I",
+	"country": "ALGERIE",
+	"commercial_name": "BACTIZOL",
+	"reference_rate": "129 DA",
+	"ppa": null,
+	"registration": "003/ 13 B 013 /01/09",
+	"dci": "13B013",
+	"form": "PDRE. INJ",
+	"dosage": "1G/FL",
+	"conditioning": "B/1FL. PDRE. + 1AMP.SOLV. (0,5% LIDOCAINE) DE 4ML"
 }
 ```
 
@@ -48,11 +52,11 @@ This is an attempt to collect all medications in algeria.<br>
 
 ```JSON
 {
-  "name": "PHARMA IVAL",
-  "link": "https://pharmnet-dz.com/l-221-pharma-ival",
-  "img": "https://pharmnet-dz.com/ImageHandler.ashx?imageurl=img/labos/221.png",
-  "address": "8, rue d\u00e2\u0080\u0099Alep, Delmonte, Oran - Route de Bouchaoui, Ouled Fayet, Alger",
-  "tel": "+213 (0) 21 38 82 03 - +213 (0) 41 43 60 70",
-  "web": "www.ivalpharma.com"
+	"name": "PHARMA IVAL",
+	"link": "https://pharmnet-dz.com/l-221-pharma-ival",
+	"img": "https://pharmnet-dz.com/ImageHandler.ashx?imageurl=img/labos/221.png",
+	"address": "8, rue d\u00e2\u0080\u0099Alep, Delmonte, Oran - Route de Bouchaoui, Ouled Fayet, Alger",
+	"tel": "+213 (0) 21 38 82 03 - +213 (0) 41 43 60 70",
+	"web": "www.ivalpharma.com"
 }
 ```

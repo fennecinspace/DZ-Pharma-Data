@@ -125,5 +125,3 @@ class MedInfoExtractor:
                 cls.scrap_commun_lines(soup, med)
                 
                 return med
-                
-

@@ -18,10 +18,15 @@ if __name__ == "__main__":
     meds = {letter : [] for letter in MedsLinksExtractor.letters}
     for letter, links in meds_links.items():
         for i, link in enumerate(links):
-            print('Letter {} | Med [{:2}/{:2}]'.format(letter, i, len(links)), end = "\r")
-            meds[letter] += [MedInfoExtractor.scrap_med_page(link)]
-            Json.save(MED_INFOS_DB, meds)
-
+            try:
+                print('Letter {} | Med [{:2}/{:2}]'.format(letter, i, len(links)), end = "\r")
+                tmp = MedInfoExtractor.scrap_med_page(link)
+                if tmp:
+                    meds[letter] += [tmp]
+            except Exception as e:
+                print(link)
+        Json.save(MED_INFOS_DB, meds)
+        print('Saving {}'.format(letter))
 
     print('Extracting Labs')
     labs = []
